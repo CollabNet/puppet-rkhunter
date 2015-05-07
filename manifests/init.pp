@@ -65,6 +65,7 @@ class rkhunter  (
   $allowproclisten        = $rkhunter::params::allowproclisten,
   $allowpromiscif         = $rkhunter::params::allowpromiscif,
   $allowdevfile           = $rkhunter::params::allowdevfile,
+  $allowdevfile_inc_def   = false, # If this is set it will add the default values for $allowdevfile to whatever is passed
   $uid0_accounts          = $rkhunter::params::uid0_accounts,
   $pwdless_accounts       = $rkhunter::params::pwdless_accounts,
   $syslog_config_file     = $rkhunter::params::syslog_config_file,
