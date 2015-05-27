@@ -65,7 +65,6 @@ class rkhunter  (
   $allowproclisten        = $rkhunter::params::allowproclisten,
   $allowpromiscif         = $rkhunter::params::allowpromiscif,
   $allowdevfile           = $rkhunter::params::allowdevfile,
-  $allowdevfile_inc_def   = false, # If this is set it will add the default values for $allowdevfile to whatever is passed
   $uid0_accounts          = $rkhunter::params::uid0_accounts,
   $pwdless_accounts       = $rkhunter::params::pwdless_accounts,
   $syslog_config_file     = $rkhunter::params::syslog_config_file,
@@ -73,6 +72,7 @@ class rkhunter  (
   $suspscan_dirs          = $rkhunter::params::suspscan_dirs,
   $port_whitelist         = $rkhunter::params::port_whitelist,
   $shared_lib_whitelist   = $rkhunter::params::shared_lib_whitelist,
+  $include_defaults_for   = [], # Any variables listed here will be include their defaults from params.pp as well as what is passed; supports allowdevfile only so far
 
 ) inherits ::rkhunter::params {
   include ::rkhunter::packages

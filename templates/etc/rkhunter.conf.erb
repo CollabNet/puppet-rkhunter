@@ -621,7 +621,7 @@ PHALANX2_DIRTEST=<%= @phlanx2_dirtest %>
 # be specified more than once. The option may use wildcard
 # characters.
 #
-<% if @allowdevfile_inc_def -%>
+<% if @include_defaults_for.include? 'allowdevfile' -%>
 <% scope.lookupvar('rkhunter::params::allowdevfile').each do |devfile| -%>
 ALLOWDEVFILE=<%= devfile %>
 <% end -%>
