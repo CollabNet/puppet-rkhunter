@@ -268,7 +268,11 @@ SSH_CONFIG_DIR=<%= @ssh_config_dir %>
 # the Debian Security Team).
 #
 ENABLE_TESTS="<%= @enable_tests %>"
+<% if @include_defaults_for.include? 'disable_tests' -%>
+DISABLE_TESTS="<%= scope.lookupvar('rkhunter::params::disable_tests') %> <%= @disable_tests %>"
+<% else -%>
 DISABLE_TESTS="<%= @disable_tests %>"
+<% end -%>
 
 #
 # The HASH_FUNC option can be used to specify the command to use
